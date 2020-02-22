@@ -129,24 +129,21 @@ body section ul li.article {
   width: 30%;
   margin-bottom: 30px;
   background-color: #FADBD8;
-}
-
-body section ul li.article div.article-content {
   padding: 4px 16px;
 }
 
-body section ul li.article div.article-content .article-title {
+body section ul li.article .article-title {
   padding-top: 10px;
   font-size: 1.5vw;
   color: brown;
 }
 
-body section ul li.article div.article-content .article-description {
+body section ul li.article .article-description {
   font-size: 1.1vw;
   color: black;
 }
 
-body section ul li.article div.article-content .article-author {
+body section ul li.article .article-author {
   font-size: 1vw;
 }
 
@@ -177,13 +174,13 @@ body section ul li.article a {
     width: 90%;
     margin-bottom: 20px;
   }
-  body main section ul li.article div.article-content .article-title {
+  body main section ul li.article .article-title {
     font-size: 4vw;
   }
-  body main section ul li.article div.article-content .article-description {
+  body main section ul li.article .article-description {
     font-size: 3vw;
   }
-  body main section ul li.article div.article-content .article-author {
+  body main section ul li.article .article-author {
     font-size: 3vw;
   }
   body main section ul li.article a {

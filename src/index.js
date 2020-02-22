@@ -58,20 +58,19 @@ async function fetchNews(searchUrl){
         //array to fetch elements
         data.articles.forEach(i => {
             output += `<li class="article">
-                            <img src=${i.urlToImage} alt="Avatar" style="width:100%">
-                            <div class="article-content">
+                            <img src=${i.urlToImage} alt="Avatar" style="width:100%;margin-top:5px;" class="article-img">
+                            
                                 <h2 class="article-title"><b>${i.title}</b></h2> 
                                 <p class="article-description">${i.description}</p> 
                                 <span class="article-author">`;
                                 if((i.author)!=null){
-                                    output+=`-${i.author}</span>`;
+                                    output+=`- ${i.author}</span>`;
                                 }
                                 else{
                                     output+=`-N.A</span>`;
                                 }
                                 
-                    output += `      </div>
-                            <a href=${i.url} class="article-link" target='_blank'><em>Read More At: ${i.source.name}</em></a>
+                    output += `<br> <a href=${i.url} class="article-link" target='_blank'><em>Read More At: ${i.source.name}</em></a>
             
                     </li>`;
         });
