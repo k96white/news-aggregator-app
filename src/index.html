@@ -5,18 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>News Aggregator</title>
   
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
   <!--BOOTSTRAP CSS PATH BELOW-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <!--local css files-->
   <link rel="stylesheet" href="styles/index.css">
 </head>
-<body>
+<body onload="beforeLoad()">
   <header class="text-center">
     <h1 class="bg-dark text-white rounded" id="news-header">NEWS AGGREGATOR</h1>
+    <h6> <button id="toggler" onclick="toogleColor()" class="btn btn-info">Dark Mode</button> </h6>
+    
   </header>
   <main class="container text-center">
-         
+    <br>
+      <input id='search' placeholder="Type and press enter to search" type='text' class="border border-danger rounded">
+      <br>
+      <!-- <button id="search-btn" class="btn btn-danger" onclick="searchValue()">Search</button>
+      <button id="clear-btn" class="btn btn-primary" onclick="fetchNews('top-headlines?country=in')">Clear</button> -->
       <br><br>
+      <div id="loader-wrapper">
+         <div id="loader"></div>
+         <div id="loader2"></div>
+      </div>
       <section id="news-section">
            
       </section>

@@ -2,38 +2,132 @@ $body-color: blue;
 
 body {
   color: $body-color;
-  main{
+  
+  header{
     h1#news-header{
       padding: 10px;
       border-radius: 10px;
       font-size: 4vw;
+      #toggler{
+        cursor: pointer;
+      }
     }
-
+  }  
+   main{
+   // background-color: #212F3D;
+    input#search{
+      width: 100%;
+    }
+    
+    //<start>css for loader
+    #loader-wrapper{
+      background-color:rgba(100, 30, 22,0.9);
+      position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+      
+          #loader,
+          #loader:before,
+          #loader:after {
+            background: #00ff00;
+            -webkit-animation: load1 1s infinite ease-in-out;
+            animation: load1 1s infinite ease-in-out;
+            width: 1em;
+            height: 4em;
+          }
+          #loader {
+            color: #00ff00;
+            text-indent: -9999em;
+            margin: 88px auto;
+            position: relative;
+            font-size: 13px;
+            -webkit-transform: translateZ(0);
+            -ms-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-animation-delay: -0.16s;
+            animation-delay: -0.16s;
+          }
+          #loader:before,
+          #loader:after {
+            position: absolute;
+            top: 0;
+            content: '';
+          }
+          #loader:before {
+            left: -1.5em;
+            -webkit-animation-delay: -0.32s;
+            animation-delay: -0.32s;
+          }
+          #loader:after {
+            left: 1.5em;
+          }
+          @-webkit-keyframes load1 {
+            0%,
+            80%,
+            100% {
+              box-shadow: 0 0;
+              height: 4em;
+            }
+            40% {
+              box-shadow: 0 -2em;
+              height: 5em;
+            }
+          }
+          @keyframes load1 {
+            0%,
+            80%,
+            100% {
+              box-shadow: 0 0;
+              height: 4em;
+            }
+            40% {
+              box-shadow: 0 -2em;
+              height: 5em;
+            }
+          }
+          
+      }
+      //<end> css for loader
+    }  
     section{
+        display:none;
       ul{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         list-style: none;
         li.article{
-              box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+              border-radius: 5px;
+              box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
               transition: 0.3s;
               width: 30%;
               margin-bottom: 30px;
-              background-color: blanchedalmond;
+              background-color: #FADBD8;
               div.article-content{
-                padding: 2px 16px;
+                padding: 4px 16px;
                 .article-title{
-                  font-size: 2vw;
+                  padding-top: 10px;
+                  font-size: 1.5vw;
                   color: brown;
                 }
                 .article-description{
-                  font-size: 1vw;
+                  font-size: 1.1vw;
                   color: black;
                 }
+                .article-author{
+                  font-size: 1vw;
+                }
+               
               }
               &:hover{
-                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+                box-shadow: 0 20px 30px 0 rgba(0,0,0,0.6);
               }
               a{
                 cursor: pointer;
@@ -44,29 +138,52 @@ body {
       }
     }
 
+    // to add responsiveness for small devices
     @media screen and (max-width:450px){
-      section{
-        ul{
-          flex-direction: column;
-          li.article{
-            width: 100%;
-            margin: auto;
-            margin-bottom: 10px;
-             div.article-content{
-              .article-title{
-                font-size: 4vw;
+     header{
+          h1#news-header{
+            font-size: 5vw;
+           
+          }
+     } 
+     main{
+          section{
+            ul{
+              flex-direction: column;
+              flex-wrap: nowrap;
+              li.article{
+                width: 90%;
               
+                
+                margin-bottom: 20px;
+                div.article-content{
+                  .article-title{
+                    font-size: 4vw;
+                  
+                  }
+                  .article-description{
+                    font-size: 3vw;
+                  }
+                  .article-author{
+                    font-size: 3vw;
+                  }
+                  
+                }
+                a{
+                  font-size: 3vw;
+                }
               }
-              .article-description{
-                font-size: 3vw;
-              }
-
             }
           }
-        }
       }
     }
 
 
-  }
+  
 }
+
+.dark-mode {
+  background-color:#212F3C;
+ // color: white;
+}
+
