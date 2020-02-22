@@ -1,19 +1,21 @@
 
 //<start> code to search for news
 var inputTxt = document.getElementById("search");
-inputTxt.addEventListener("keyup",searchValue)
-function searchValue(){
+inputTxt.addEventListener("keypress",searchValue)
+function searchValue(e){
      var searchText = document.getElementById("search").value;
      console.log(searchText);  //for testing
-     if(searchText!=''){
-        var searchUrl = `everything?q=${searchText}`;
-        beforeLoad();
-        fetchNews(searchUrl);
-     }   
-     else{
-        beforeLoad();
-        fetchNews("top-headlines?country=in"); //by default it fetch news related to india
-     }
+     if(e.which==13){
+        if(searchText!=''){
+            var searchUrl = `everything?q=${searchText}`;
+            beforeLoad();
+            fetchNews(searchUrl);
+        }   
+        else{
+            beforeLoad();
+            fetchNews("top-headlines?country=in"); //by default it fetch news related to india
+        }
+    }   
 }
 //<end>
 
