@@ -141,6 +141,7 @@ body section ul li.article .article-title {
 body section ul li.article .article-description {
   font-size: 1.1vw;
   color: black;
+  word-wrap: break-word;
 }
 
 body section ul li.article .article-author {

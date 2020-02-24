@@ -55,7 +55,7 @@ async function fetchNews(searchUrl){
     const data = await res.json();
     console.log(data);
     if(data.totalResults>0){
-        output= '<ul id="news-articles">'
+        output= '';
         
         //array to fetch elements
         data.articles.forEach(i => {
@@ -76,9 +76,9 @@ async function fetchNews(searchUrl){
             
                     </li>`;
         });
-        output += '</ul>';
+        output += '';
 
-        document.getElementById("news-section").innerHTML=output;
+        document.getElementById("news-articles").innerHTML=output;
     } 
     
     else if(data.totalResults===0){
