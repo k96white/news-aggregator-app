@@ -1,4 +1,4 @@
-require('../styles/index.css')
+
 
 
 //<start> code to search for news
