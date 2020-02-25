@@ -1,9 +1,9 @@
-
+import '../styles/index.scss';
 
 
 //<start> code to search for news
 var inputTxt = document.getElementById("search");
-inputTxt.addEventListener("keypress",searchValue)
+inputTxt.addEventListener("keypress",searchValue);
 function searchValue(e){
      var searchText = document.getElementById("search").value;
      console.log(searchText);  //for testing
@@ -21,33 +21,24 @@ function searchValue(e){
 }
 //<end>
 
-//function to toggle
-function toogleColor(){
-    var bodyColor = document.body;
-    bodyColor.classList.toggle("dark-mode");
 
-    var btnText = document.getElementById("toggler");
-    if(btnText.innerHTML === "Dark Mode")  
-    {
-          btnText.innerHTML="Light Mode";
-    }
-    else{
-          btnText.innerHTML="Dark Mode";
-    }
-}
 
-//function for loader
-var myVar;
-function beforeLoad(){
-    document.getElementById("loader-wrapper").style.display="flex";
-    document.getElementById("news-section").style.display="none";
-    myVar = setTimeout(afterLoad, 1500);
-}
+             //function to toggle
+             document.getElementById("toggler").addEventListener("click",toogleColor);
+            function toogleColor(){
+                var bodyColor = document.body;
+                bodyColor.classList.toggle("dark-mode");
 
-function afterLoad(){
-      document.getElementById("loader-wrapper").style.display="none";
-      document.getElementById("news-section").style.display="block";
-}
+                var btnText = document.getElementById("toggler");
+                if(btnText.innerHTML === "Dark Mode")  
+                {
+                    btnText.innerHTML="Light Mode";
+                }
+                else{
+                    btnText.innerHTML="Dark Mode";
+                }
+            }
+
 
 // function to fetch news list
 async function fetchNews(searchUrl){
@@ -55,7 +46,7 @@ async function fetchNews(searchUrl){
     const data = await res.json();
     console.log(data);
     if(data.totalResults>0){
-        output= '';
+       var output= '';
         
         //array to fetch elements
         data.articles.forEach(i => {

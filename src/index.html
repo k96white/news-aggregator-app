@@ -10,12 +10,12 @@
   <!--BOOTSTRAP CSS PATH BELOW-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <!--local css files-->
-  <link rel="stylesheet" href="styles/index.css">
+  <!-- <link rel="stylesheet" href="styles/index.css"> -->
 </head>
 <body onload="beforeLoad()">
   <header class="text-center">
     <h1 class="bg-secondary text-white rounded" id="news-header">NEWS AGGREGATOR</h1>
-    <h6> <button id="toggler" onclick="toogleColor()" class="btn btn-info">Dark Mode</button> </h6>
+    <h6> <button id="toggler"  class="btn btn-info">Dark Mode</button> </h6>
     
   </header>
   <main class="container text-center">
@@ -36,17 +36,34 @@
       </section>
   </main>
  
+   <script>
+               
+               //function for loader
+               var myVar;
+            function beforeLoad(){
+                document.getElementById("loader-wrapper").style.display="flex";
+                document.getElementById("news-section").style.display="none";
+                myVar = setTimeout(afterLoad, 1500);
+            }
 
+            function afterLoad(){
+                document.getElementById("loader-wrapper").style.display="none";
+                document.getElementById("news-section").style.display="block";
+            }
+
+           
+
+   </script>
 
    
-   
+   <!--Local js file linked-->
+   <script src="src\scripts\index.js"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-     <!--Local js file linked-->
-     <script src="scripts/index.js"></script>
+     
 </body>
 </html>
