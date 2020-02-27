@@ -51,7 +51,7 @@ async function fetchNews(searchUrl){
         //array to fetch elements
         data.articles.forEach(i => {
             output += `<li class="article">
-                            <img src=${i.urlToImage} alt="Avatar" style="width:100%;margin-top:5px;" class="article-img">
+                            <img src=${i.urlToImage} alt=${i.source.name} style="width:100%;margin-top:5px;" class="article-img">
                             
                                 <h2 class="article-title"><b>${i.title}</b></h2> 
                                 <p class="article-description">${i.description}</p> 
