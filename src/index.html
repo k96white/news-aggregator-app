@@ -1,72 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>News Aggregator</title>
-  
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>News Aggregator</title>
 
-  <!--BOOTSTRAP CSS PATH BELOW-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <!--local css files-->
-  <!-- <link rel="stylesheet" href="styles/index.css"> -->
-</head>
-<body onload="beforeLoad()">
-  <header class="text-center">
-    <h1 class="bg-secondary text-white rounded" id="news-header">NEWS AGGREGATOR</h1>
-    <h6> <button id="toggler"  class="btn btn-info">Dark Mode</button> </h6>
-    
-  </header>
-  <button class="btn btn-primary  rounded" id="myBtn" title="Go to top"><i class="material-icons">
-    arrow_upward
-    </i>Top</button>
-  <main class="container text-center">
-    <br>
-      <input id='search' placeholder="Type and press enter to search..." type='text' class="border border-danger rounded"><hr>
-      <br>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <!--BOOTSTRAP CSS PATH BELOW-->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <!--local css files-->
+    <!-- <link rel="stylesheet" href="styles/index.css"> -->
+  </head>
+  <body onload="beforeLoad()">
+    <header class="text-center">
+      <h1 class="bg-secondary text-white rounded" id="news-header">
+        NEWS AGGREGATOR
+      </h1>
+      <h6><button id="toggler" class="btn btn-info">Dark Mode</button></h6>
+    </header>
+    <button class="btn btn-primary rounded" id="myBtn" title="Go to top">
+      <i class="material-icons">
+        arrow_upward </i
+      >Top
+    </button>
+    <main class="container text-center">
+      <br />
+      <input
+        id="search"
+        placeholder="Type and press enter to search..."
+        type="text"
+        class="border border-danger rounded"
+      />
+      <hr />
+      <br />
       <!-- <button id="search-btn" class="btn btn-danger" onclick="searchValue()">Search</button>
       <button id="clear-btn" class="btn btn-primary" onclick="fetchNews('top-headlines?country=in')">Clear</button> -->
-      
+
       <div id="loader-wrapper">
-         <div id="loader"></div>
-         <!-- <div id="loader2"></div> -->
+        <div id="loader"></div>
+        <!-- <div id="loader2"></div> -->
       </div>
       <section id="news-section">
-          <ul id="news-articles">
-          
-          </ul>
+        <ul id="news-articles"></ul>
       </section>
-  </main>
- 
-   <script>
-               
-               //function for loader
-               var myVar;
-            function beforeLoad(){
-                document.getElementById("loader-wrapper").style.display="flex";
-                document.getElementById("news-section").style.display="none";
-                myVar = setTimeout(afterLoad, 1500);
-            }
+    </main>
 
-            function afterLoad(){
-                document.getElementById("loader-wrapper").style.display="none";
-                document.getElementById("news-section").style.display="block";
-            }
+    <script>
+      //function for loader
+      var myVar;
+      function beforeLoad() {
+        document.getElementById("loader-wrapper").style.display = "flex";
+        document.getElementById("news-section").style.display = "none";
+        myVar = setTimeout(afterLoad, 1500);
+      }
 
-           
+      function afterLoad() {
+        document.getElementById("loader-wrapper").style.display = "none";
+        document.getElementById("news-section").style.display = "block";
+      }
+    </script>
 
-   </script>
-
-   
-   <!--Local js file linked-->
-   <script src="src\scripts\index.js"></script>
+    <!--Local js file linked-->
+    <script src="src\scripts\index.js"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-     
-</body>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
